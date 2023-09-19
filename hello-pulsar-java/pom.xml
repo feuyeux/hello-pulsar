@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.feuyeux.mq</groupId>
+  <artifactId>hello-pulsar</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <properties>
+    <jdk.version>21</jdk.version>
+    <!-- https://mvnrepository.com/artifact/org.apache.pulsar/pulsar-client -->
+    <pulsar.version>3.1.0</pulsar.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.pulsar</groupId>
+      <artifactId>pulsar-client</artifactId>
+      <version>${pulsar.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${project.name}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <version>3.11.0</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <release>${jdk.version}</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass>org.feuyeux.mq.Hello</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
